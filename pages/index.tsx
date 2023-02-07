@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <p>Landing</p>
+          <p>Welcome to our group project!</p>
         </div>
       </main>
     </>
