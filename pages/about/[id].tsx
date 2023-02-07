@@ -20,7 +20,7 @@ export default function AboutId() {
     setLoaded(true);
 
     //dependency array, re-fetch on router.isReady
-  }, [router.isReady]);
+  }, [id, router]);
 
   //returned html
   return loaded ? memberComponents[id] : null;

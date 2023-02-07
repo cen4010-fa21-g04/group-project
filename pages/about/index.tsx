@@ -14,8 +14,9 @@ export default function About() {
           <div
             className="about-card"
             onClick={() => router.push(`/about/${id}`)}
+            key={id}
           >
-            <img />
+            <img alt={`${id} picture`} />
             <h6>{id}</h6>
             <p>Developer</p>
             <Link href={`/about/${id}`}>Learn more</Link>
