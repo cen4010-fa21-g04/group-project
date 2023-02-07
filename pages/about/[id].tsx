@@ -1,5 +1,4 @@
 import { memberComponents, memberIds } from '@/lib/data';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -24,10 +23,5 @@ export default function AboutId() {
   }, [router.isReady]);
 
   //returned html
-  return loaded ? (
-    <div>
-      <Link href="/about">Back</Link>
-      {memberComponents[id]}
-    </div>
-  ) : null;
+  return loaded ? memberComponents[id] : null;
 }

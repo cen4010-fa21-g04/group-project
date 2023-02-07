@@ -1,17 +1,27 @@
 import { memberIds } from '@/lib/data';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function About() {
+  const router = useRouter();
   return (
-    <div>
-      <h1>Welcome to the about page</h1>
-      <ul>
+    <div className="about">
+      <h1 className=" font-bold tracking-tight text-gray-900 sm:text-2xl">
+        Our Team
+      </h1>
+      <div className="about-grid">
         {memberIds.map((id) => (
-          <li key={id}>
-            <Link href={`/about/${id}`}>{id}</Link>
-          </li>
+          <div
+            className="about-card"
+            onClick={() => router.push(`/about/${id}`)}
+          >
+            <img />
+            <h6>{id}</h6>
+            <p>Developer</p>
+            <Link href={`/about/${id}`}>Learn more</Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
