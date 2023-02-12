@@ -1,1 +1,62 @@
 /* add your css classes here */
+.sshank2018h1{
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+    border: 10px solid rgb(169, 11, 100);
+    font-size: 30px;
+    padding: 20px;
+    width: 25%;
+    height: 50%;
+    font-family: "Lucida Handwriting", "Georgia", Fantasy;
+}
+
+.sshank2018paragraph{
+    font-family: "Georgia", Serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sshank2018about{
+    background-image: linear-gradient(to right, rgb(255, 225, 0),rgb(18, 196, 184),rgb(168, 19, 242));
+    background-position: 50% 50%;
+}
+
+.sshank2018column1{
+    float: left;
+    width: 33.33%;
+    border: 5px solid rgb(67, 203, 240);
+    border-radius: 25px;
+text-align: center;
+}
+
+.sshank2018column2{
+    float: left;
+    width: 33.33%;
+    border: 5px solid rgb(128, 0, 47);
+    border-radius: 25px;
+text-align: center;
+}
+
+.sshank2018column3{
+    float: left;
+    width: 33.33%;
+    border: 5px solid rgb(232, 224, 0);
+    border-radius: 25px;
+    text-align: center;
+}
+
+.sshank2018row:after{
+content: "";
+display: table;
+clear: both;
+}
+
+.sshank2018topic{
+    text-align: center;
+    font-size: large;
+}
+
+.sshank2018contactheader{
+    font-size: 20px;
+}
