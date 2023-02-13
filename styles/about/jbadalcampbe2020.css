@@ -1,1 +1,41 @@
 /* add your css classes here */
+.jbadalcampbe2020-body {
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .jbadalcampbe2020-h2-center {
+    text-align: center;
+
+  }
+
+  .jbadalcampbe2020-p-center {
+    text-align: center;
+
+  }
+  
+  .jbadalcampbe2020-div-mid {
+    align-self: auto;
+  }
+  
+  .jbadalcampbe2020-div-right  {
+    align-self: auto;
+  }
+  
+  .jbadalcampbe2020-h2 {
+    margin-top: 0;
+  }
+
+  .jbadalcampbe2020-row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .jbadalcampbe2020-column {
+    float: left;
+  width: 33.33%;
+  }
