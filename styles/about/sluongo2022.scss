@@ -1,0 +1,32 @@
+/* add your css classes here */
+
+.sluongo2022 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  gap: 2rem;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    width: fit-content;
+  }
+
+  .sluongo2022-content {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+
+  .sluongo2022-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+}
