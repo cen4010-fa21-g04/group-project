@@ -1,1 +1,79 @@
 /* add your css classes here */
+.brudowitz2021h1{
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    border: 20px solid powderblue;
+    padding: 20px;
+    font-size: 90px;
+    padding: 15px;
+    width: 100%;
+    font-family: Lucida Bright;
+    background-color: cyan;
+}
+
+.brudowitz2021p1{
+    color: firebrick;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    border: 15px solid beige;
+    font-size: 20px;
+    font-family: sans-serif;
+    background-color:azure;
+    padding:1%;    
+}
+
+.brudowitz2021row1{
+    width: 100%;
+    font-weight:600;
+    color: rgb(7, 64, 138);
+    height: 100%;
+    border: 10px solid rgb(128, 0, 117);
+    padding:1%;
+    text-align: center;
+    background-color: rgb(145, 255, 249);
+}
+
+.brudowitz2021row2{
+    width: 100%;
+    font-weight:600;
+    color: darkred;
+    height: 100%;
+    border: 10px solid rgb(128, 0, 0);
+    padding:1%;
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(220, 105, 248));
+}
+
+.brudowitz2021row3{
+    width: 100%;
+    font-weight:600;
+    color: brown;
+    height: 100%;
+    border: 10px solid rgb(2, 0, 128);
+    padding:1%;
+    text-align: center;
+    background-image: linear-gradient(rgb(250, 136, 136), rgb(255, 255, 254), rgb(107, 184, 255));
+}
+
+.brudowitz2021row4{
+    width: 100%;
+    font-weight:600;
+    color: rgb(165, 42, 128);
+    height: 100%;
+    border: 10px solid green;
+    background-image: linear-gradient(to bottom right, rgb(169, 252, 121), rgb(112, 145, 253));
+    padding:1%;
+    text-align: center;
+}
+
+.brudowitz2021sectionName{
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.brudowitz2021contactsection{
+    font-size: 20px;
+}
