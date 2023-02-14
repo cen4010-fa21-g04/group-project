@@ -1,16 +1,29 @@
 /* add your css classes here */
-
 .sluongo2022 {
   height: 100%;
-  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  gap: 2rem;
 }
-
-.sluongo2022-container {
-  background-color: blue;
+.sluongo2022 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
-
-.sluongo-hello {
+.sluongo2022 h1 {
+  font-size: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-
-.sluongo-container {
+.sluongo2022 .sluongo2022-content {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
+.sluongo2022 .sluongo2022-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}/*# sourceMappingURL=sluongo2022.css.map */
