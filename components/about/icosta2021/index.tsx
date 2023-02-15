@@ -41,7 +41,7 @@ export default function AboutIcosta2021()
         <div className="icosta2021margin">
             <h2 className="icosta2021section-title"><span className="icosta2021highlight-pink">About Me (Truly!)</span></h2>
             <p className="icosta2021proj-title"><span className="icosta2021thin-highlight-pink"><b>What do I do for fun?</b></span></p>
-            <p className="icosta2021proj-text">I play lots and lots of video games for fun! Lately, I've even gotten into streaming on my own. I play video games to relax, and I love sharing and conversing at the same time (though sometimes I can't do both without losing my train of thought). In an effort to combine them both, I usually put them together! Streaming is a delight. I also like to write on my free time; writing is one of my favorite hobbies. Reading and writing is usually how I spend my time whenever playing video games isn't appropriate for the moment.</p>
+            <p className="icosta2021proj-text">I play lots and lots of video games for fun!! Lately, I've even gotten into streaming on my own. I play video games to relax, and I love sharing and conversing at the same time (though sometimes I can't do both without losing my train of thought). In an effort to combine them both, I usually put them together! Streaming is a delight. I also like to write on my free time; writing is one of my favorite hobbies. Reading and writing is usually how I spend my time whenever playing video games isn't appropriate for the moment.</p>
         </div>
     </div>
                 
