@@ -1,1 +1,105 @@
 /* add your css classes here */
+
+.icostasettings1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    color: #000000;
+    font-family: "Didot", "Comic Sans MS", "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  
+  .icosta2021highlight-pink {
+    background: linear-gradient(180deg,rgba(255,255,255, 0) 65%, #ff5ea19a 65%);
+  }
+  
+  .icosta2021space {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .icosta2021highlight-white {
+    background: linear-gradient(180deg,rgba(255,255,255, 0) 65%, #ffffff 65%);
+  }
+  
+  .icosta2021thin-highlight-white {
+    background: linear-gradient(180deg,rgba(255,255,255, 0) 80%, #ffffff 80%);
+  }
+  
+  .icosta2021thin-highlight-pink {
+    background: linear-gradient(180deg,rgba(255,255,255, 0) 80%, #ff5ea19a 80%);
+  }
+  
+  .icosta2021name {
+    font-size: 500%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .icosta2021intro {
+    font-size: 150%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .icosta2021margin {
+    margin-left: 110px;
+    margin-right: 110px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  
+  
+  .icosta2021pink-background {
+    background: #ffc5ed9a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icosta2021white-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icosta2021section-title {
+    font-size: 300%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+  
+  .icosta2021descTitle {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  p {
+    margin: 0;
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+  }
+  
+  .icosta2021bio {
+    margin-top: 0px;
+  }
+  
+  .icosta2021proj-title {
+    font-size: 150%;
+  }
+  
+  .icosta2021proj-text {
+    margin-top: 0;
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 1rem;
+    margin-left: 5%;
+  }
