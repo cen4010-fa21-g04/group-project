@@ -13,17 +13,17 @@ export default function Home() {
       <div className="isolate bg-white">
         <main>
           <div className="relative px-6 lg:px-8">
-                <div style={{ paddingLeft: 16 }}>
+                <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
                     <div>
                         <br></br>
                         <form action="/action_page.php">
-                            <label htmlFor="date">Input Date:</label>
+                            <label htmlFor="date">Input Date: </label>
                             <input type="text" id="date" name="date"></input>
-                            <br></br>
-                            <label htmlFor="nofpeople">Input # of People:</label>
+                            <br></br> <br></br>
+                            <label htmlFor="nofpeople">Input # of People: </label>
                             <input type="text" id="nofpeople" name="nofpeople"></input>
-                            <br></br>
-                            <input type="submit" value="Submit"></input>
+                            <br></br><br></br>
+                            <input type="submit" value=" Submit " style={{backgroundColor: "white"}}></input>
                         </form>
                     </div>   
 
@@ -35,13 +35,14 @@ export default function Home() {
                     <div>
                     <br></br>
                     <form action="/action_page.php">
-                        <label htmlFor="name">Input Name:</label>
+                        <label htmlFor="name">Input Name: </label>
                         <input type="text" id="name" name="name"></input>
-                        <br></br>
-                        <label htmlFor="phone">Input Phone #:</label>
+                        <br></br><br></br>
+                        <label htmlFor="phone">Input Phone #: </label>
                         <input type="text" id="phone" name="phone"></input>
-                        <br></br>
-                        <input type="submit" value="Reserve"></input>
+                        <br></br><br></br>
+                        <input type="submit" value=" Reserve " style={{backgroundColor: "white"}}></input>
+                        <br></br><br></br>
                     </form>
                     </div>                 
                 </div>
