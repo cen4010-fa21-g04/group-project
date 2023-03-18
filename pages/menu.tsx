@@ -18,45 +18,48 @@ export default function Home() {
             <a className = "active" href="menu">Menu</a>
             <a href="#cart">Cart</a>
         </div>
+        
           <div className="relative px-6 lg:px-8">
                 <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
+                  <br></br>
                         <table style={{backgroundColor: "white"}}>
                             <tr>
-                                <th>Item   </th>
-                                <th>Price</th>
-                                <th><button></button></th>
+                                <th>Item     </th>
+                                <th> &nbsp; &nbsp; Price &nbsp;    </th>
+                                <th>  Submit  </th>
                             </tr>
                             <tr>
                                 <td>Cheeseburger   </td>
-                                <td>$10</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$10</td>
+                                <td><form><input type="submit" value=" Submit " name = "cheeseburger" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>
                             <tr>
                                 <td>Pizza   </td>
-                                <td>$12</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$12</td>
+                                <td><form><input type="submit" value=" Submit " name = "pizza" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>
                             <tr>
                                 <td>Chicken Salad   </td>
-                                <td>$9</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$9</td>
+                                <td><form><input type="submit" value=" Submit " name = "chickensalad" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>
                             <tr>
                                 <td>Shrimp Tacos   </td>
-                                <td>$13</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$13</td>
+                                <td><form><input type="submit" value=" Submit " name = "shrimptacos" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>
                             <tr>
                                 <td>Soup of the Day   </td>
-                                <td>$5</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$5</td>
+                                <td><form><input type="submit" value=" Submit " name = "soupoftheday" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>
                             <tr>
                                 <td>Pasta   </td>
-                                <td>$8</td>
-                                <td><button>   </button></td>
+                                <td>&nbsp;&nbsp;&nbsp;$8</td>
+                                <td><form><input type="submit" value=" Submit " name = "pasta" style={{backgroundColor: "white"}}></input></form></td>
                             </tr>                            
                         </table>
+                        <br></br>
                 </div>
           </div>
         </main>
