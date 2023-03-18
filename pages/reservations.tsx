@@ -12,6 +12,12 @@ export default function Home() {
       </Head>
       <div className="isolate bg-white">
         <main>
+
+        <div className="topnav">
+            <a className="active" href="reservations">Reservations</a>
+            <a href="menu">Menu</a>
+            <a href="cart">Cart</a>
+        </div>
           <div className="relative px-6 lg:px-8">
                 <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
                     <div>
