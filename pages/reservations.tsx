@@ -11,12 +11,11 @@ export default function Home() {
         <link rel="stylesheet" href="reservations.css"></link>
       </Head>
       <div className="isolate bg-white">
-        <main>
-
-        <div className="topnav">
-            <a className="active" href="reservations">Reservations</a>
-            <a href="menu">Menu</a>
-            <a href="cart">Cart</a>
+        <main> 
+        <div style={{backgroundColor: "white", overflow: "hidden", marginLeft: "32px", textAlign: "center"}}>
+            <a href="reservations" style = {{backgroundColor: "orange", color: "white", float: "left", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderWidth: "2px", borderColor: "black"}}>Reservations</a> &nbsp;&nbsp;&nbsp;
+            <a href="menu" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Menu</a>&nbsp;&nbsp;&nbsp;
+            <a href="cart" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Cart</a>
         </div>
           <div className="relative px-6 lg:px-8">
                 <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>

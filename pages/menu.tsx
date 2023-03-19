@@ -13,52 +13,53 @@ export default function Home() {
       <div className="isolate bg-white">
         <main>
 
-        <div className="topnav">
-            <a href="reservations">Reservations</a>
-            <a className = "active" href="menu">Menu</a>
-            <a href="cart">Cart</a>
+        <div style={{backgroundColor: "white", overflow: "hidden", marginLeft: "32px", textAlign: "center"}}>
+        <a href="reservations" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderWidth: "2px", borderColor: "black"}}>Reservations</a>&nbsp;&nbsp;&nbsp;
+            <a href="menu" style = {{backgroundColor: "orange", color: "white", float: "left", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Menu</a> &nbsp;&nbsp;&nbsp;            
+            <a href="cart" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Cart</a>
         </div>
         
           <div className="relative px-6 lg:px-8">
-                <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
+                <div style={{ backgroundColor: "#CC0000", paddingLeft: "16px", margin: "0", fontFamily: "Arial, Helvetica, sans-serif"}}>
                   <br></br>
+                  <form>
                         <table style={{backgroundColor: "white"}}>
                             <tr>
-                                <th>Item     </th>
-                                <th> &nbsp; &nbsp; Price &nbsp;    </th>
-                                <th>  Submit  </th>
+                                <th>Item</th>
+                                <th>&nbsp;&nbsp;Price &nbsp;</th>
+                                <th>Submit</th>
                             </tr>
                             <tr>
-                                <td>Cheeseburger   </td>
+                                <td>Cheeseburger</td>
                                 <td>&nbsp;&nbsp;&nbsp;$10</td>
-                                <td><form><input type="submit" value=" Submit " name = "cheeseburger" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "cheeseburger" style={{backgroundColor: "green"}}></input></td>
                             </tr>
                             <tr>
-                                <td>Pizza   </td>
+                                <td>Pizza</td>
                                 <td>&nbsp;&nbsp;&nbsp;$12</td>
-                                <td><form><input type="submit" value=" Submit " name = "pizza" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "pizza" style={{backgroundColor: "green"}}></input></td>
                             </tr>
                             <tr>
-                                <td>Chicken Salad   </td>
+                                <td>Chicken Salad</td>
                                 <td>&nbsp;&nbsp;&nbsp;$9</td>
-                                <td><form><input type="submit" value=" Submit " name = "chickensalad" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "chickensalad" style={{backgroundColor: "green"}}></input></td>
                             </tr>
                             <tr>
                                 <td>Shrimp Tacos   </td>
                                 <td>&nbsp;&nbsp;&nbsp;$13</td>
-                                <td><form><input type="submit" value=" Submit " name = "shrimptacos" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "shrimptacos" style={{backgroundColor: "green"}}></input></td>
                             </tr>
                             <tr>
                                 <td>Soup of the Day   </td>
                                 <td>&nbsp;&nbsp;&nbsp;$5</td>
-                                <td><form><input type="submit" value=" Submit " name = "soupoftheday" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "soupoftheday" style={{backgroundColor: "green"}}></input></td>
                             </tr>
                             <tr>
                                 <td>Pasta   </td>
                                 <td>&nbsp;&nbsp;&nbsp;$8</td>
-                                <td><form><input type="submit" value=" Submit " name = "pasta" style={{backgroundColor: "green"}}></input></form></td>
+                                <td><input type="submit" value=" Submit " name = "pasta" style={{backgroundColor: "green"}}></input></td>
                             </tr>                            
-                        </table>
+                        </table></form>
                         <br></br>
                 </div>
           </div>

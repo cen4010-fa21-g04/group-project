@@ -13,10 +13,11 @@ export default function Home() {
       <div className="isolate bg-white">
         <main>
 
-        <div className="topnav">
-            <a href="reservations">Reservations</a>
-            <a href="menu">Menu</a>
-            <a className = "active" href="cart">Cart</a>
+        <div style={{backgroundColor: "white", overflow: "hidden", marginLeft: "32px", textAlign: "center"}}>
+            <a href="reservations" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderWidth: "2px", borderColor: "black"}}>Reservations</a>&nbsp;&nbsp;&nbsp;
+            <a href="menu" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Menu</a>&nbsp;&nbsp;&nbsp;
+            <a href="cart" style = {{backgroundColor: "orange", color: "white", float: "left", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Cart</a>          
+            
         </div>
         
           <div className="relative px-6 lg:px-8">
@@ -37,20 +38,21 @@ export default function Home() {
                 <br></br>
 
                 <div style={{backgroundColor: "white", marginRight: "550px"}}>
-                    Total:
+                    
+                    <p style = {{fontSize: "25px", fontFamily: "papyrus"}}>Total:</p>
                     <br></br>
                     <form>
-                    $   <input type="text" id="date" name="date" placeholder = "Card Number" style={{borderColor: "green", borderWidth: "2px"}}></input>
+                    $   <input type="text" id="date" name="date" placeholder = "Card Number" style={{borderColor: "black", borderBottomWidth: "2px", textAlign: "center"}}></input>
                     &nbsp;
-                        <input type="text" id="date" name="date" placeholder = "Card Expiration Date" style={{borderColor: "green", borderWidth: "2px"}}></input>
+                        <input type="text" id="date" name="date" placeholder = "Card Expiration Date" style={{borderColor: "black", borderBottomWidth: "2px", textAlign: "center"}}></input>
                         &nbsp;
-                        <input type="text" id="date" name="date" placeholder = "Security Code"style={{borderColor: "green", borderWidth: "2px"}}></input>
+                        <input type="text" id="date" name="date" placeholder = "Security Code"style={{borderColor: "black", borderBottomWidth: "2px", textAlign: "center"}}></input>
                         &nbsp;
-                        <input type="text" id="date" name="date" placeholder = "Card Holder Name" style={{borderColor: "green", borderWidth: "2px"}}></input>
+                        <input type="text" id="date" name="date" placeholder = "Card Holder Name" style={{borderColor: "black", borderBottomWidth: "2px", textAlign: "center"}}></input>
                         &nbsp;
-                        <input type="text" id="date" name="date" placeholder = "Name for the Order" style={{borderColor: "green", borderWidth: "2px"}}></input>
+                        <input type="text" id="date" name="date" placeholder = "Name for the Order" style={{borderColor: "black", borderBottomWidth: "2px", textAlign: "center"}}></input>
                         &nbsp; &nbsp;
-                       <input type="submit" value = " Submit " style = {{backgroundColor: "orange"}}></input></form>
+                       <input type="submit" value = " Submit " style = {{backgroundColor: "orange", borderColor: "black", borderTopWidth: "2px", borderLeftWidth: "2px", borderRightWidth: "3px", borderBottomWidth: "4px"}}></input></form>
                     <br></br>
                 </div>
                 <br></br>

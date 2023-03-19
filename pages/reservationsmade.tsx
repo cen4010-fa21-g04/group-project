@@ -13,10 +13,10 @@ export default function Home() {
       <div className="isolate bg-white">
         <main>
 
-        <div className="topnav">
-            <a className="active" href="reservationsmade">Reservations Made</a>
-            <a href="updatemenu">Update Menu Items</a>
-            <a href="ordersplaced">Orders Placed</a>
+        <div style={{backgroundColor: "white", overflow: "hidden", marginLeft: "32px", textAlign: "center"}}>
+            <a href="reservationsmade" style = {{backgroundColor: "orange", color: "white", float: "left", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderWidth: "2px", borderColor: "black"}}>Reservations Made</a> &nbsp;&nbsp;&nbsp;
+            <a href="ordersplaced" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Orders Placed</a>&nbsp;&nbsp;&nbsp;
+            <a href="updatemenu" style = {{float: "left", color: "black", textAlign: "center", padding: "14px 16px", fontSize: "40px", textDecoration: "none", fontFamily: "papyrus", borderRightWidth: "2px", borderTopWidth: "2px", borderBottomWidth: "2px", borderColor: "black"}}>Update Menu Items</a>
         </div>
           <div className="relative px-6 lg:px-8">
                 <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
