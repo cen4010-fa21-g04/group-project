@@ -36,7 +36,7 @@ export default function Home() {
                 </table>
                 <br></br>
 
-                <div style={{backgroundColor: "white"}}>
+                <div style={{backgroundColor: "white", marginRight: "550px"}}>
                     Total:
                     <br></br>
                     <form>
@@ -56,6 +56,9 @@ export default function Home() {
                 <br></br>
                 </div>
           </div>
+          <footer style = {{backgroundColor: "gray", textAlign: "right", marginLeft: "32px", marginRight: "32px"}}>
+          <a href="login" style={{fontSize: "12px"}}><u><b>Employee / Restaurant View</b></u>&nbsp;&nbsp;</a>
+          </footer>
         </main>
       </div>
     </>

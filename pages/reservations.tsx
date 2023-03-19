@@ -22,37 +22,41 @@ export default function Home() {
                 <div style={{ backgroundColor: "#CC0000", paddingLeft: 16, margin: 0, fontFamily: "Arial, Helvetica, sans-serif"}}>
                     <div>
                         <br></br>
-                        <form action="/action_page.php">
-                            <label htmlFor="date">Input Date: </label>
-                            <input type="text" id="date" name="date"></input>
-                            <br></br> <br></br>
-                            <label htmlFor="nofpeople">Input # of People: </label>
-                            <input type="text" id="nofpeople" name="nofpeople"></input>
-                            <br></br><br></br>
-                            <input type="submit" value=" Submit " style={{backgroundColor: "white"}}></input>
+                        <form>
+                            <input type="text" id="date" name="date" placeholder = " Input Date " style={{borderColor: "black", borderWidth: "3px", textAlign: "center"}}></input> &nbsp;&nbsp;&nbsp;
+                            <input type="text" id="nofpeople" name="nofpeople" placeholder = " Input # of People " style={{borderColor: "black", borderWidth: "3px", textAlign: "center"}}></input> &nbsp;&nbsp;&nbsp;
+                            <input type="submit" value=" Submit " style={{backgroundColor: "green", color: "white", borderColor: "black", borderWidth: "3px"}}></input>
                         </form>
                     </div>   
 
-                    <div>
-                        <p>
-                        </p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <div style = {{backgroundColor: "white", marginRight: "1200px"}}>
+                       <br></br>
+                       <br></br>
+                       <br></br>
+                       <br></br>
                     </div>
+
+                    <br></br>
+                    <br></br>
 
                     <div>
                     <br></br>
-                    <form action="/action_page.php">
-                        <label htmlFor="name">Input Name: </label>
-                        <input type="text" id="name" name="name"></input>
-                        <br></br><br></br>
-                        <label htmlFor="phone">Input Phone #: </label>
-                        <input type="text" id="phone" name="phone"></input>
-                        <br></br><br></br>
-                        <input type="submit" value=" Reserve " style={{backgroundColor: "white"}}></input>
+                    <form>
+                        <input type="text" id="name" name="name" placeholder = " Input Name " style={{borderColor: "black", borderWidth: "3px", textAlign: "center"}}></input> &nbsp;&nbsp;&nbsp;
+                        <input type="text" id="phone" name="phone" placeholder = " Input Phone Number " style={{borderColor: "black", borderWidth: "3px", textAlign: "center"}}></input> &nbsp;&nbsp;&nbsp;
+                        <input type="submit" value=" Reserve " style={{backgroundColor: "green", color: "white", borderColor: "black", borderWidth: "3px"}}></input>
                         <br></br><br></br>
                     </form>
                     </div>                 
                 </div>
           </div>
+          <footer style = {{backgroundColor: "gray", textAlign: "right", marginLeft: "32px", marginRight: "32px"}}>
+          <a href="login" style={{fontSize: "12px"}}><u><b>Employee / Restaurant View</b></u>&nbsp;&nbsp;</a>
+          </footer>
         </main>
       </div>
     </>
