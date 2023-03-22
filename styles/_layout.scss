@@ -1,0 +1,17 @@
+.layout_container {
+  background-color: #cc0000;
+  height: 100vh;
+  font-family: 'Arial, Helvetica, sans-serif';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layout_footer {
+  background-color: gray;
+  text-align: right;
+  padding: 1rem 2rem;
+  a {
+    font-size: 0.8rem;
+  }
+}
