@@ -34,7 +34,7 @@ export default function Home() {
                 </div>
           </div>
           <footer style = {{backgroundColor: "gray", textAlign: "right", marginLeft: "32px", marginRight: "32px"}}>
-          <a href="main" style={{fontSize: "12px"}}><u><b>Customer View</b></u>&nbsp;&nbsp;</a>
+          <a href="reservations" style={{fontSize: "12px"}}><u><b>Customer View</b></u>&nbsp;&nbsp;</a>
           </footer>
         </main>
       </div>
