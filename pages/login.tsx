@@ -14,7 +14,7 @@ export default function Login() {
             <input type="text" placeholder="Password" />
             <button type="submit">Log In</button>
           </span>
-          <Link href="reservations">Quick Link Until Login Form is Setup</Link>
+          <Link href="reservationsmade">Quick Link Until Login Form is Setup</Link>
         </form>
       </div>
       <Footer href="main" title="Customer View" />
