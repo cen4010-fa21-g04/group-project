@@ -8,7 +8,7 @@ datasource db {
 }
 
 model customers {
-  customer_id  Int    @id @unique(map: "customer_id")
+  customer_id  String @id @unique(map: "customer_id") @db.VarChar(255)
   first_name   String @db.VarChar(50)
   last_name    String @db.VarChar(50)
   email        String @db.VarChar(255)
