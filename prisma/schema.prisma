@@ -7,11 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model customers {
-  customer_id  String @id @unique(map: "customer_id") @db.VarChar(255)
-  first_name   String @db.VarChar(50)
-  last_name    String @db.VarChar(50)
-  email        String @db.VarChar(255)
-  phone_number String @db.VarChar(20)
-  address      String @db.VarChar(255)
+model login {
+  username String @db.VarChar(100)
+  password String @db.VarChar(100)
+
+  @@id([username, password])
+}
+
+model menu {
+  id    String  @id @db.VarChar(255)
+  name  String? @db.VarChar(100)
+  price Int?
+}
+
+model orders {
+  oid        String    @id @db.VarChar(255)
+  cardno     Int?
+  timeplaced DateTime? @db.Time(0)
+  oname      String?   @db.VarChar(100)
+}
+
+model reservations {
+  resdate  DateTime @db.Date
+  nopeople String   @db.VarChar(5)
+  restime  DateTime @db.Time(0)
+  name     String?  @db.VarChar(255)
+
+  @@id([resdate, restime, nopeople])
 }
