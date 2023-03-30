@@ -5,9 +5,9 @@ import { ReactNode } from 'react';
 export default function AdminNavbar() {
   return (
     <nav className="navbar">
-      <NavbarLink href="reservations">Reservations Made</NavbarLink>
+      <NavbarLink href="reservations/list">Reservations Made</NavbarLink>
       <NavbarLink href="menu/update">Update Menu</NavbarLink>
-      <NavbarLink href="cart">Orders placed</NavbarLink>
+      <NavbarLink href="orders">Orders placed</NavbarLink>
     </nav>
   );
 }

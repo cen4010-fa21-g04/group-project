@@ -7,12 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 const prisma = new PrismaClient();
 const handler = nc();
 
-//fetch all customers
+//fetch the entire menu
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
-  //find all customers
+  //find all items
   const menu = await prisma.menu.findMany();
 
-  //return customers
+  //return menu
   res.status(200).json({ body: { menu } });
 });
 

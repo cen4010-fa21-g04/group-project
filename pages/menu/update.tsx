@@ -1,5 +1,5 @@
 import AdminNavbar from '@/components/admin-navbar';
-import Footer from '@/components/footer';
+import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
 import { MenuService } from '@/services/MenuService';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
@@ -157,7 +157,7 @@ export default function Menu() {
         </DialogActions>
       </Dialog>
 
-      <Footer href="login" title="Employee / Restaurant View" />
+      <AdminFooter />
     </main>
   );
 }

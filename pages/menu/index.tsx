@@ -16,13 +16,15 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 const menuService = new MenuService();
 
 interface Item {
-  itemname: string;
+  name: string;
   price: number;
+  quantity?: number;
+  id: string;
 }
 
 export default function Menu() {
   const [items, setItems] = useState(null);
-  const [cartItems, setCartItems] = useState(new Map());
+  const [cartItems, setCartItems] = useState<Map<string, Item>>(new Map());
   const [open, setOpen] = useState(false);
 
   const handleClose = (
@@ -53,11 +55,15 @@ export default function Menu() {
     }
   }, []);
 
-  const addToCart = (item) => {
+  const addToCart = (item: Item) => {
     setOpen(true);
     const updatedCartItems = new Map(cartItems);
-    const existingItem = updatedCartItems.get(item);
-    updatedCartItems.set(item, existingItem ? existingItem + 1 : 1);
+    const existingItem = updatedCartItems.get(item.id);
+    const updatedItem = {
+      ...item,
+      quantity: existingItem ? (existingItem.quantity += 1) : 1,
+    };
+    updatedCartItems.set(item.id, updatedItem);
     localStorage.setItem(
       'cartItems',
       JSON.stringify(Array.from(updatedCartItems))
@@ -69,6 +75,7 @@ export default function Menu() {
     <main className="layout_container">
       <Header title="OnlyTable | Menu" />
       <Navbar />
+
       <div className="menu">
         <table className="menu_table">
           <tbody>
@@ -90,6 +97,7 @@ export default function Menu() {
           </tbody>
         </table>
       </div>
+
       <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           Item added to cart!

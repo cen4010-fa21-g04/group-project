@@ -29,13 +29,6 @@ export class MenuService extends BaseService {
     });
   }
 
-  public async updateMenu(id: string, body: MenuItemProps) {
-    return await this.PUT({
-      path: `/menu/${id}`,
-      body,
-    });
-  }
-
   public async deleteItem(id: string) {
     return await this.DELETE({
       path: `/menu/${id}`,

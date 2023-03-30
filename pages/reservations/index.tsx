@@ -21,7 +21,7 @@ export default function Reservations() {
           <button type="submit">Submit</button>
         </form>
       </div>
-      <Footer href="login" title="Employee / Restaurant View" />
+      <Footer href="/login" title="Employee / Restaurant View" />
     </main>
   );
 }

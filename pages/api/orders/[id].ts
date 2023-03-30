@@ -6,29 +6,36 @@ import nc from 'next-connect';
 const prisma = new PrismaClient();
 const handler = nc();
 
-//fetch individual menu item
+//fetch individual order
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
   const id = req.query.id as string;
 
-  //fetch customer
-  const customer = await prisma.menu.findUnique({
+  //fetch order
+  const order = await prisma.orders.findUnique({
     where: {
       id,
     },
+    include: {
+      items: {
+        include: {
+          item: true,
+        },
+      },
+    },
   });
 
-  //return customer
-  res.status(200).json({ customer });
+  //return order
+  res.status(200).json({ body: { order } });
 });
 
-//delete menu item
+//delete menu order
 handler.delete(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
   const id = req.query.id as string;
 
-  //delete item
-  const item = await prisma.menu.delete({
+  //delete order
+  const order = await prisma.orders.delete({
     where: {
       id,
     },
@@ -36,7 +43,7 @@ handler.delete(async (req: NextApiRequest, res: NextApiResponse) => {
 
   //return message
   res.status(200).json({
-    message: `Menu item ${item.name} deleted`,
+    message: `Order with id: ${order.id} deleted`,
   });
 });
 
