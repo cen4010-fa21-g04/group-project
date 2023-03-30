@@ -131,18 +131,19 @@ export default function Cart() {
           <p>
             <strong>Items</strong>
           </p>
-          {Array.from(cartItems).map(([id, item]) => (
-            <div
-              key={id}
-              style={{ display: 'flex', margin: '.5rem 0', gap: '.5rem' }}
-              onClick={() => removeQuantityFromCart(id)}
-            >
-              <p>{item.name}: </p> <p> {item.quantity}</p>
-              <button style={{ background: 'red', borderRadius: 5 }}>
-                Remove
-              </button>
-            </div>
-          ))}
+          {cartItems &&
+            Array.from(cartItems).map(([id, item]) => (
+              <div
+                key={id}
+                style={{ display: 'flex', margin: '.5rem 0', gap: '.5rem' }}
+                onClick={() => removeQuantityFromCart(id)}
+              >
+                <p>{item.name}: </p> <p> {item.quantity}</p>
+                <button style={{ background: 'red', borderRadius: 5 }}>
+                  Remove
+                </button>
+              </div>
+            ))}
         </div>
         <form className="login_form" onSubmit={handleSubmit}>
           <div>Total: $ {cartTotal / 100}</div>
