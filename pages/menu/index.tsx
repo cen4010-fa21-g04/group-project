@@ -77,12 +77,13 @@ export default function Menu() {
       <Navbar />
 
       <div className="menu">
+      <div className = "backgroundpiece">
         <table className="menu_table">
           <tbody>
             <tr>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Add</th>
+              <th><u>Item</u></th>
+              <th><u>Price</u></th>
+              <th> </th>
             </tr>
             {items &&
               items.map((item) => (
@@ -94,8 +95,10 @@ export default function Menu() {
                   </td>
                 </tr>
               ))}
+
           </tbody>
         </table>
+        </div>
       </div>
 
       <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>

@@ -10,14 +10,18 @@ export default function Login() {
         <form className="login_form">
           <h1>Log In - Employee View</h1>
           <span>
-            <input type="text" placeholder="Username" />
-            <input type="text" placeholder="Password" />
-            <button type="submit">Log In</button>
+            <input className = "lfirstform" type="text" placeholder="Username" />
+            <br></br>
+            <input className = "llastform" type="text" placeholder="Password" />
+            <br></br>
+            <button className = "lbutton" type="submit">Log In</button>
           </span>
-          <Link href="/reservations/list">
+          
+        </form>
+        
+        <Link className = "outsidebutton" href="/reservations/list">
             Quick Link Until Login Form is Setup
           </Link>
-        </form>
       </div>
       <Footer href="main" title="Customer View" />
     </main>

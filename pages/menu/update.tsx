@@ -117,15 +117,22 @@ export default function Menu() {
               ))}
           </tbody>
         </table>
-        <form onSubmit={createItemHandler}>
-          <p>Create new menu item</p>
-          <input name="name" type="text" placeholder="Item Name" />
-          <input
+        <form className = "uouterform" onSubmit={createItemHandler}>
+          <p className = "ucreatenew">Create New Menu Item</p>
+          
+          <br></br>
+          <input className = "ufirstform"
+            name="name" 
+            type="text" 
+            placeholder="Item Name" 
+          />
+
+          <input className = "usecondform"
             name="price"
             type="number"
             placeholder="Item Price (IN DECIMAL)"
           />
-          <button type="submit">Create</button>
+          <button className = "ubutton" type="submit"><b>Create</b></button>
         </form>
       </div>
 
