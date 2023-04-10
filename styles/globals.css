@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import "menu.css";
 @import "cart.css";
-@import "reservations.css";
+@import "updatemenu.css";
 @import "login.css";
 
 .about {

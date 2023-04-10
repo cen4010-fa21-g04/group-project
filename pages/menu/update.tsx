@@ -133,7 +133,18 @@ export default function Menu() {
             placeholder="Item Price (IN DECIMAL)"
           />
           <button className = "ubutton" type="submit"><b>Create</b></button>
+          
+          <p className = "ucreatenew">Create New Menu Item</p>
+          
+          <br></br>
+          <input className = "ufirstform"
+            name="namedelete" 
+            type="text" 
+            placeholder="Item Name" 
+          />
+          <button className = "ubuttondelete" type="submit"><b>Delete</b></button>
         </form>
+
       </div>
 
       <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
