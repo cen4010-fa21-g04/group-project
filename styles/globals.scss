@@ -4,6 +4,10 @@
 
 @import './about';
 @import './layout';
+@import 'menu.css';
+@import 'cart.css';
+@import 'updatemenu.css';
+@import 'login.css';
 
 body {
   font-size: 16px;
@@ -147,22 +151,6 @@ body {
   border: 2px solid black;
 }
 
-.reservations_form {
-  display: flex;
-  font-family: 'Arial';
-  gap: 1rem;
-  input {
-    border: 2px solid black;
-    padding: 0.25rem;
-  }
-  button,
-  a {
-    border: 2px solid black;
-    background-color: #fff;
-    padding: 0.25rem;
-  }
-}
-
 .orders {
   height: 100%;
   box-sizing: border-box;
@@ -182,4 +170,18 @@ body {
   border: 1px solid black;
   padding: 0.25rem 1rem;
   background-color: #fff;
+}
+
+.reservations {
+  background-color: #fff;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: fit-content;
+}
+
+.reservations_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }

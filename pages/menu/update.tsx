@@ -117,34 +117,27 @@ export default function Menu() {
               ))}
           </tbody>
         </table>
-        <form className = "uouterform" onSubmit={createItemHandler}>
-          <p className = "ucreatenew">Create New Menu Item</p>
-          
+        <form className="uouterform" onSubmit={createItemHandler}>
+          <p className="ucreatenew">Create New Menu Item</p>
+
           <br></br>
-          <input className = "ufirstform"
-            name="name" 
-            type="text" 
-            placeholder="Item Name" 
+          <input
+            className="ufirstform"
+            name="name"
+            type="text"
+            placeholder="Item Name"
           />
 
-          <input className = "usecondform"
+          <input
+            className="usecondform"
             name="price"
             type="number"
             placeholder="Item Price (IN DECIMAL)"
           />
-          <button className = "ubutton" type="submit"><b>Create</b></button>
-          
-          <p className = "ucreatenew">Create New Menu Item</p>
-          
-          <br></br>
-          <input className = "ufirstform"
-            name="namedelete" 
-            type="text" 
-            placeholder="Item Name" 
-          />
-          <button className = "ubuttondelete" type="submit"><b>Delete</b></button>
+          <button className="ubutton" type="submit">
+            <b>Create</b>
+          </button>
         </form>
-
       </div>
 
       <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
