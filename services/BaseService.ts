@@ -1,4 +1,3 @@
-import { baseURL } from '@/lib/url';
 import { DeleteInterfaceNamespace } from './interfaces/http/deleteInterface';
 import {
   GetInterface,
@@ -14,7 +13,7 @@ import {
 } from './interfaces/http/putInterface';
 
 export class BaseService implements GetInterface, PostInterface, PutInterface {
-  static url: string = `${baseURL}/api`;
+  static url: string = `/api`;
 
   public async GET(
     payload: GetInterfaceNamespace.Request

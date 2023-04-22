@@ -1,6 +1,6 @@
 module.exports = {
   env: {
     DATABASE_URL: process.env.DATABASE_URL,
-    PROD_URL: process.env.PROD_URL,
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
   },
 };
