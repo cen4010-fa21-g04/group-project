@@ -2,6 +2,7 @@ import Footer from '@/components/footer';
 import Header from '@/components/head';
 import { firebaseApp } from '@/firebase/firebaseApp';
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -18,6 +19,7 @@ export default function Login() {
   const [user, loading, error] = useAuthState(auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   if (loading) {
     return (
@@ -34,23 +36,17 @@ export default function Login() {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     try {
       e.preventDefault();
-      signInWithEmailAndPassword(auth, email, password);
+      const res = await signInWithEmailAndPassword(auth, email, password);
+      if (res.user) {
+        router.push('/reservations/list');
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
-  if (user) {
-    return (
-      <div>
-        <p>Current User: {user.email}</p>
-        <button onClick={logout}>Log out</button>
-      </div>
-    );
-  }
 
   return (
     <main className="layout_container">
@@ -69,7 +65,7 @@ export default function Login() {
             <input
               onChange={(e) => setPassword(e.target.value)}
               className="llastform"
-              type="text"
+              type="password"
               placeholder="Password"
             />
             <br></br>
@@ -79,7 +75,7 @@ export default function Login() {
           </span>
         </form>
       </div>
-      <Footer href="main" title="Customer View" />
+      <Footer href="/" title="Customer View" />
     </main>
   );
 }

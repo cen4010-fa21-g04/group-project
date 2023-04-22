@@ -1,6 +1,7 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
+import AdminRoute from '@/hocs/adminRoute';
 import { MenuService } from '@/services/MenuService';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Button from '@mui/material/Button';
@@ -26,7 +27,7 @@ interface Item {
   price: number;
 }
 
-export default function Menu() {
+function Menu() {
   const [items, setItems] = useState(null);
   const [open, setOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
@@ -172,3 +173,5 @@ export default function Menu() {
     </main>
   );
 }
+
+export default AdminRoute(Menu);

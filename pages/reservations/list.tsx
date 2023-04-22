@@ -1,6 +1,7 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
+import AdminRoute from '@/hocs/adminRoute';
 import {
   ReservationProps,
   ReservationService,
@@ -33,7 +34,7 @@ export const clientColumns = [
   },
 ];
 
-export default function Reservations() {
+function Reservations() {
   const [reservations, setReservations] = useState<ReservationProps[]>(null);
 
   const router = useRouter();
@@ -86,3 +87,5 @@ export default function Reservations() {
     )
   );
 }
+
+export default AdminRoute(Reservations);
