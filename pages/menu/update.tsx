@@ -64,7 +64,8 @@ function Menu() {
 
   const handleItemDelete = async () => {
     handleDialogClose();
-    const response = await menuService.deleteItem(currentItem.mid);
+    const response = await menuService.deleteItem(currentItem.id);
+    console.log(response);
     const updatedItems = items.filter((item) => item.id !== currentItem.id);
     setItems(updatedItems);
   };

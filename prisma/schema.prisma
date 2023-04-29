@@ -55,5 +55,5 @@ model reservations {
   id          String          @id @db.VarChar(255)
   name             String?  @db.VarChar(255)
   number_of_guests Int
-  date             DateTime @db.Date
+  date             DateTime 
 }

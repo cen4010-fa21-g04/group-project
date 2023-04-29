@@ -6,6 +6,7 @@ import {
   ReservationProps,
   ReservationService,
 } from '@/services/ReservationService';
+import { Button } from '@mui/material';
 import moment from 'moment';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -48,19 +49,35 @@ function Reservation() {
     router.isReady && loadRoute();
   }, [router.isReady, id]);
 
+  const handleDeleteReservation = async () => {
+    const response = await reservationService.deleteReservation(id);
+    console.log(response);
+    setReservation(null);
+    router.push('/reservations/list');
+  };
+
   return (
     order && (
-      <main className="layout_container">
+      <main className="layout_container" style={{ color: '#fff' }}>
         <Header title="OnlyTable | Orders" />
         <AdminNavbar />
 
         <div className="orders" style={{ backgroundColor: '#cc0000' }}>
-          <button
+          <Button
+            variant="contained"
+            color="primary"
             onClick={() => router.push('/reservations/list')}
-            className="order_back"
+            sx={{ mr: 2 }}
           >
             Back
-          </button>
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            onClick={handleDeleteReservation}
+          >
+            Delete Reservation
+          </Button>
           <h1>Reservation Id: {id}</h1>
           <p>Order Name: {order.name}</p>
           <p>Number of guests: {order.number_of_guests}</p>

@@ -29,8 +29,10 @@ export const clientColumns = [
     field: 'date',
     headerName: 'Reservation Date',
     width: 250,
-    valueGetter: (params) =>
-      moment(params.row?.date).format('MMMM Do, YYYY, h:mm a'),
+    valueGetter: (params) => {
+      console.log(params.row.date);
+      return moment(params.row?.date).format('MMMM Do, YYYY, h:mm a');
+    },
   },
 ];
 
@@ -41,6 +43,7 @@ function Reservations() {
 
   const loadRoute = async () => {
     const response = await reservationService.fetchAllReservations();
+    console.log(response);
     setReservations(response.body.reservations);
   };
 

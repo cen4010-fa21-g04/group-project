@@ -1,19 +1,12 @@
 import Footer from '@/components/footer';
 import Header from '@/components/head';
 import { firebaseApp } from '@/firebase/firebaseApp';
-import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 const auth = getAuth(firebaseApp);
-
-const login = () => {
-  signInWithEmailAndPassword(auth, 'test@test.com', 'password');
-};
-const logout = () => {
-  signOut(auth);
-};
 
 export default function Login() {
   const [user, loading, error] = useAuthState(auth);
@@ -34,6 +27,11 @@ export default function Login() {
         <p>Error: {error.message}</p>
       </div>
     );
+  }
+
+  if (user) {
+    router.push('/reservations/list');
+    return null;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -79,7 +77,3 @@ export default function Login() {
     </main>
   );
 }
-
-const CurrentUser = () => {
-  return <button onClick={login}>Log in</button>;
-};
