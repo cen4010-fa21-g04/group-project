@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
-import { v4 as uuidv4 } from 'uuid';
 
 //route config
 const prisma = new PrismaClient();
@@ -10,7 +9,7 @@ const handler = nc();
 //fetch all reservations
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   //find all reservations
-  const reservations = await prisma.reservations.findMany();
+  const reservations = await prisma.reservation.findMany({});
 
   //return reservations
   res.status(200).json({ body: { reservations } });
@@ -20,17 +19,13 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     //extract data from request body
-    const { name, date, number_of_guests } = req.body;
+    const { name, date, number_of_guests: numberOfGuests } = req.body;
 
-    //generate reservation id
-    const id: string = uuidv4();
-
-    const reservation = await prisma.reservations.create({
+    const reservation = await prisma.reservation.create({
       data: {
-        id,
         name,
         date,
-        number_of_guests,
+        numberOfGuests,
       },
     });
 

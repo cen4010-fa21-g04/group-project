@@ -60,8 +60,8 @@ function Order() {
           <p>Order Total: ${order.total / 100}</p>
           <p>Order Items: </p>
           {order.items.map((orderItem) => (
-            <p key={orderItem.item.id}>
-              {orderItem.item.name} : {orderItem.item.quantity}
+            <p key={`order-${orderItem.id}`}>
+              {orderItem.name} : {orderItem.quantity}
             </p>
           ))}
         </div>

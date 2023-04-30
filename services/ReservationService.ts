@@ -4,7 +4,7 @@ import { HttpResponse } from './interfaces/http/httpResponse';
 export interface ReservationProps {
   id?: string;
   name?: string;
-  number_of_guests?: number;
+  numberOfGuests?: number;
   date: Date;
 }
 

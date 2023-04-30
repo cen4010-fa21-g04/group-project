@@ -9,19 +9,15 @@ const handler = nc();
 //fetch individual order
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
-  const id = req.query.id as string;
+  const id = req.query.id;
 
   //fetch order
-  const order = await prisma.orders.findUnique({
+  const order = await prisma.order.findUnique({
     where: {
-      id,
+      id: Number(id),
     },
     include: {
-      items: {
-        include: {
-          item: true,
-        },
-      },
+      items: true,
     },
   });
 
@@ -32,12 +28,12 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 //delete menu order
 handler.delete(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
-  const id = req.query.id as string;
+  const id = req.query.id;
 
   //delete order
-  const order = await prisma.orders.delete({
+  const order = await prisma.order.delete({
     where: {
-      id,
+      id: Number(id),
     },
   });
 

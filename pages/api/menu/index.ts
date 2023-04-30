@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
-import { v4 as uuidv4 } from 'uuid';
 
 //route config
 const prisma = new PrismaClient();
@@ -10,7 +9,7 @@ const handler = nc();
 //fetch the entire menu
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   //find all items
-  const menu = await prisma.menu.findMany();
+  const menu = await prisma.menuItem.findMany();
 
   //return menu
   res.status(200).json({ body: { menu } });
@@ -21,15 +20,12 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   //extract data from request body
   const { name, price: strPrice } = req.body;
 
-  //generate item id
-  const id: string = uuidv4();
-
   const price = parseInt(strPrice);
 
   try {
     //create new item
-    const item = await prisma.menu.create({
-      data: { id, name, price },
+    const item = await prisma.menuItem.create({
+      data: { name, price },
     });
     //return item
     res.status(201).json({ body: { item } });

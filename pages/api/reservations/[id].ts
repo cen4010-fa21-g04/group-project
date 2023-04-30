@@ -9,12 +9,12 @@ const handler = nc();
 //fetch individual reservation
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
-  const id = req.query.id as string;
+  const id = req.query.id;
 
   //fetch reservation
-  const reservation = await prisma.reservations.findUnique({
+  const reservation = await prisma.reservation.findUnique({
     where: {
-      id,
+      id: Number(id),
     },
   });
 
@@ -25,12 +25,12 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 //delete menu reservation
 handler.delete(async (req: NextApiRequest, res: NextApiResponse) => {
   //deconstruct id from request query
-  const id = req.query.id as string;
+  const id = req.query.id;
 
   //delete reservation
-  const reservation = await prisma.reservations.delete({
+  const reservation = await prisma.reservation.delete({
     where: {
-      id,
+      id: Number(id),
     },
   });
 

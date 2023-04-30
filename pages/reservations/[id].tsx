@@ -13,29 +13,8 @@ import { useEffect, useState } from 'react';
 
 const reservationService = new ReservationService();
 
-export const clientColumns = [
-  {
-    field: 'name',
-    headerName: 'Order Name',
-    width: 150,
-  },
-  {
-    field: 'total',
-    headerName: 'Order Total',
-    width: 150,
-    valueGetter: (params) => `$${params?.row.total / 100}`,
-  },
-  {
-    field: 'created_at',
-    headerName: 'Date Created',
-    width: 250,
-    valueGetter: (params) =>
-      moment(params.row?.created_at).format('MMMM Do, YYYY'),
-  },
-];
-
 function Reservation() {
-  const [order, setReservation] = useState<ReservationProps>(null);
+  const [reservation, setReservation] = useState<ReservationProps>(null);
 
   const router = useRouter();
 
@@ -57,12 +36,12 @@ function Reservation() {
   };
 
   return (
-    order && (
+    reservation && (
       <main className="layout_container" style={{ color: '#fff' }}>
-        <Header title="OnlyTable | Orders" />
+        <Header title="OnlyTable | reservations" />
         <AdminNavbar />
 
-        <div className="orders" style={{ backgroundColor: '#cc0000' }}>
+        <div className="reservations" style={{ backgroundColor: '#cc0000' }}>
           <Button
             variant="contained"
             color="primary"
@@ -79,11 +58,11 @@ function Reservation() {
             Delete Reservation
           </Button>
           <h1>Reservation Id: {id}</h1>
-          <p>Order Name: {order.name}</p>
-          <p>Number of guests: {order.number_of_guests}</p>
+          <p>reservation Name: {reservation.name}</p>
+          <p>Number of guests: {reservation.numberOfGuests}</p>
           <p>
             Reservation Date:{' '}
-            {moment(order.date).format('MMMM Do, YYYY, h:mm a')}{' '}
+            {moment(reservation.date).format('MMMM Do, YYYY, h:mm a')}{' '}
           </p>
         </div>
 

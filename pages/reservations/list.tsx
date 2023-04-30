@@ -21,7 +21,7 @@ export const clientColumns = [
     width: 150,
   },
   {
-    field: 'number_of_guests',
+    field: 'numberOfGuests',
     headerName: 'Number of Guests',
     width: 150,
   },
@@ -30,7 +30,6 @@ export const clientColumns = [
     headerName: 'Reservation Date',
     width: 250,
     valueGetter: (params) => {
-      console.log(params.row.date);
       return moment(params.row?.date).format('MMMM Do, YYYY, h:mm a');
     },
   },
