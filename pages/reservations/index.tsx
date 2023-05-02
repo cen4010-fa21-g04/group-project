@@ -46,7 +46,7 @@ export default function Reservations() {
 
       const payload: ReservationProps = {
         name: String(nameRef.current.value),
-        number_of_guests: Number(numberRef.current.value),
+        numberOfGuests: Number(numberRef.current.value),
         date: new Date(value.format()),
       };
 
