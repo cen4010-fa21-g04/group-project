@@ -1,6 +1,7 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
+import AdminRoute from '@/hocs/adminRoute';
 import { OrderProps, OrderService } from '@/services/OrderService';
 import moment from 'moment';
 import { useRouter } from 'next/router';
@@ -29,21 +30,20 @@ export const clientColumns = [
   },
 ];
 
-export default function Order() {
+function Order() {
   const [order, setOrder] = useState<OrderProps>(null);
 
   const router = useRouter();
 
   const id = router.query.id as string;
 
-  const loadRoute = async () => {
-    const response = await orderService.fetchOrderById(id);
-    setOrder(response.body.order);
-  };
-
   useEffect(() => {
+    const loadRoute = async () => {
+      const response = await orderService.fetchOrderById(id);
+      setOrder(response.body.order);
+    };
     router.isReady && loadRoute();
-  }, [router.isReady]);
+  }, [router.isReady, id]);
 
   return (
     order && (
@@ -60,8 +60,8 @@ export default function Order() {
           <p>Order Total: ${order.total / 100}</p>
           <p>Order Items: </p>
           {order.items.map((orderItem) => (
-            <p key={orderItem.item.id}>
-              {orderItem.item.name} : {orderItem.item.quantity}
+            <p key={`order-${orderItem.id}`}>
+              {orderItem.name} : {orderItem.quantity}
             </p>
           ))}
         </div>
@@ -71,3 +71,5 @@ export default function Order() {
     )
   );
 }
+
+export default AdminRoute(Order);

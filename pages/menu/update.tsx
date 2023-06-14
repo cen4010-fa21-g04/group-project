@@ -1,6 +1,7 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
+import AdminRoute from '@/hocs/adminRoute';
 import { MenuService } from '@/services/MenuService';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Button from '@mui/material/Button';
@@ -26,7 +27,7 @@ interface Item {
   price: number;
 }
 
-export default function Menu() {
+function Menu() {
   const [items, setItems] = useState(null);
   const [open, setOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
@@ -63,7 +64,8 @@ export default function Menu() {
 
   const handleItemDelete = async () => {
     handleDialogClose();
-    const response = await menuService.deleteItem(currentItem.mid);
+    const response = await menuService.deleteItem(currentItem.id);
+    console.log(response);
     const updatedItems = items.filter((item) => item.id !== currentItem.id);
     setItems(updatedItems);
   };
@@ -117,15 +119,26 @@ export default function Menu() {
               ))}
           </tbody>
         </table>
-        <form onSubmit={createItemHandler}>
-          <p>Create new menu item</p>
-          <input name="name" type="text" placeholder="Item Name" />
+        <form className="uouterform" onSubmit={createItemHandler}>
+          <p className="ucreatenew">Create New Menu Item</p>
+
+          <br></br>
           <input
+            className="ufirstform"
+            name="name"
+            type="text"
+            placeholder="Item Name"
+          />
+
+          <input
+            className="usecondform"
             name="price"
             type="number"
             placeholder="Item Price (IN DECIMAL)"
           />
-          <button type="submit">Create</button>
+          <button className="ubutton" type="submit">
+            <b>Create</b>
+          </button>
         </form>
       </div>
 
@@ -161,3 +174,5 @@ export default function Menu() {
     </main>
   );
 }
+
+export default AdminRoute(Menu);

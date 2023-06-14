@@ -128,55 +128,56 @@ export default function Cart() {
       <Navbar />
       <div className="cart">
         <div className="cart_list">
-          <p>
-            <strong>Items</strong>
+          <p style={{fontSize: '30px'}}>
+            <strong>Order</strong>
           </p>
           {cartItems &&
             Array.from(cartItems).map(([id, item]) => (
               <div
                 key={id}
-                style={{ display: 'flex', margin: '.5rem 0', gap: '.5rem' }}
+                style={{ display: 'flex', margin: '.5rem 0', gap: '.5rem', justifyContent: 'center' }}
                 onClick={() => removeQuantityFromCart(id)}
               >
-                <p>{item.name}: </p> <p> {item.quantity}</p>
-                <button style={{ background: 'red', borderRadius: 5 }}>
+                <p>{item.name}: </p> <p><b> {item.quantity} </b></p>
+                <button style={{ background: 'red', borderRadius: 5, marginLeft: "10px"}}>
                   Remove
                 </button>
               </div>
             ))}
         </div>
-        <form className="login_form" onSubmit={handleSubmit}>
-          <div>Total: $ {cartTotal / 100}</div>
+        <br></br>
+        <form className="clogin_form" onSubmit={handleSubmit}>
+          <div className = "Total">Total: $ {cartTotal / 100}</div>
           <span>
-            <input
+            <input className = "cfirstform"
               required
               type="text"
               name="card_number"
               placeholder="Card Number"
               ref={cardNumberRef}
             />
-            <input
+            <input className = "csecondform"
               required
               type="text"
               name="card_exp"
               placeholder="Card Expiration Date"
               ref={cardExpRef}
             />
-            <input
+            <input className = "cthirdform"
               required
               type="number"
               name="card_cvv"
               placeholder="Security Code"
               ref={cardCvvRef}
             />
-            <input
+            <input className = "cfourthform"
               required
               type="text"
               name="card_name"
               placeholder="Card Holder Name"
               ref={cardNameRef}
             />
-            <button style={{ background: 'orange' }} type="submit">
+            <button className = "cartbutton" style={{ background: 'orange', marginLeft: "10px" }} type="submit">
               Submit
             </button>
           </span>

@@ -1,6 +1,7 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
+import AdminRoute from '@/hocs/adminRoute';
 import { OrderProps, OrderService } from '@/services/OrderService';
 import Box from '@mui/material/Box';
 import { DataGrid, GridEventListener } from '@mui/x-data-grid';
@@ -31,7 +32,7 @@ export const clientColumns = [
   },
 ];
 
-export default function Orders() {
+function Orders() {
   const [orders, setOrders] = useState<OrderProps[]>(null);
 
   const router = useRouter();
@@ -84,3 +85,5 @@ export default function Orders() {
     )
   );
 }
+
+export default AdminRoute(Orders);

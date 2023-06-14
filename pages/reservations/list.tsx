@@ -1,47 +1,93 @@
 import AdminNavbar from '@/components/admin-navbar';
 import AdminFooter from '@/components/admin/footer';
 import Header from '@/components/head';
-import { MenuService } from '@/services/MenuService';
+import AdminRoute from '@/hocs/adminRoute';
+import {
+  ReservationProps,
+  ReservationService,
+} from '@/services/ReservationService';
+import Box from '@mui/material/Box';
+import { DataGrid, GridEventListener } from '@mui/x-data-grid';
+import moment from 'moment';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const menuService = new MenuService();
+const reservationService = new ReservationService();
 
-export default function ReservationsList() {
-  const [items, setItems] = useState(null);
+export const clientColumns = [
+  {
+    field: 'name',
+    headerName: 'Order Name',
+    width: 150,
+  },
+  {
+    field: 'numberOfGuests',
+    headerName: 'Number of Guests',
+    width: 150,
+  },
+  {
+    field: 'date',
+    headerName: 'Reservation Date',
+    width: 250,
+    valueGetter: (params) => {
+      return moment(params.row?.date).format('MMMM Do, YYYY, h:mm a');
+    },
+  },
+];
+
+function Reservations() {
+  const [reservations, setReservations] = useState<ReservationProps[]>(null);
+
+  const router = useRouter();
 
   const loadRoute = async () => {
-    const response = await menuService.fetchAllMenus();
-    setItems(response.body.menu);
+    const response = await reservationService.fetchAllReservations();
+    console.log(response);
+    setReservations(response.body.reservations);
   };
 
   useEffect(() => {
     loadRoute();
   }, []);
 
+  const handleEvent: GridEventListener<'rowClick'> = (
+    params, // GridRowParams
+    event, // MuiEvent<React.MouseEvent<HTMLElement>>
+    details // GridCallbackDetails
+  ) => {
+    router.push(`/reservations/${params.row.id}`);
+  };
+
   return (
-    <main className="layout_container">
-      <Header title="OnlyTable | Orders" />
-      <AdminNavbar />
+    reservations && (
+      <main className="layout_container">
+        <Header title="OnlyTable | Reservations" />
+        <AdminNavbar />
 
-      {/* <div className="menu">
-        <table className="menu_table">
-          <tbody>
-            <tr>
-              <th>Item</th>
-              <th>Price</th>
-            </tr>
-            {items &&
-              items.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>${item.price / 100}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </div> */}
+        <div className="orders">
+          <h1>Reservations</h1>
+          <Box
+            sx={{
+              height: 'calc(100% - 2rem)',
+              width: '100%',
+              paddingLeft: '.5rem',
+              boxSizing: 'border-box',
+            }}
+          >
+            <DataGrid
+              rows={reservations}
+              columns={clientColumns}
+              sx={{ borderRadius: 0, border: 0 }}
+              getRowId={(row) => row.id}
+              onRowClick={handleEvent}
+            />
+          </Box>
+        </div>
 
-      <AdminFooter />
-    </main>
+        <AdminFooter />
+      </main>
+    )
   );
 }
+
+export default AdminRoute(Reservations);

@@ -1,0 +1,50 @@
+.menu {
+    height: 100%;
+    margin: 2rem;
+  }
+  
+  .backgroundpiece{
+    background: radial-gradient(at 18% 99%, rgb(251, 242, 4) 0px, transparent 50%) repeat scroll 0% 0%, 
+            radial-gradient(at 97% 8%, rgb(237, 218, 9) 0px, transparent 50%) repeat scroll 0% 0%, 
+            radial-gradient(at 79% 82%, rgb(191, 0, 35) 0px, transparent 50%) repeat scroll 0% 0%,
+            radial-gradient(at 96% 10%, rgb(181, 108, 0) 0px, transparent 50%) repeat scroll 0% 0%,    
+            radial-gradient(at 42% 20%, rgb(208, 59, 5) 0px, transparent 50%) repeat scroll 0% 0%,
+            radial-gradient(at 4% 49%, rgb(227, 54, 54) 0px, transparent 50%) repeat scroll 0% 0%, rgba(0, 0, 0, 0) radial-gradient(at 57% 33%, rgb(218, 25, 25) 0px, #ff1100 50%) repeat scroll 0% 0%;
+    /*background-image: linear-gradient(red, orange, orange, orange, yellow); /* the gradient */
+    width: 90%;
+    height: 90%;
+    padding: 40px;
+    margin: auto;
+    font-size: 30px;
+    border:solid black 4px;
+    border-radius:50px;
+    display: flex;
+    justify-content: center;
+  }
+
+ .menu_table {
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 10px 10px black;
+    font-family: "Comic Sans", Courier, monospace;
+  }
+
+  .menu_table td{
+    padding: 0.1rem 1rem;
+    text-align: center;
+  }
+
+  .menu_table button {
+    background-color: orange;
+    padding: 0.25rem 1rem;
+    border-radius: 100px;
+    border: 4px black solid;
+  }
+
+  .menu_table button :hover{
+    box-shadow: 10px 10px black;
+  }

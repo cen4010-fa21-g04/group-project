@@ -1,3 +1,7 @@
+@import 'menu.css';
+@import 'cart.css';
+@import 'updatemenu.css';
+@import 'login.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -209,22 +213,6 @@ body {
   border: 2px solid black;
 }
 
-.reservations_form {
-  display: flex;
-  font-family: "Arial";
-  gap: 1rem;
-}
-.reservations_form input {
-  border: 2px solid black;
-  padding: 0.25rem;
-}
-.reservations_form button,
-.reservations_form a {
-  border: 2px solid black;
-  background-color: #fff;
-  padding: 0.25rem;
-}
-
 .orders {
   height: 100%;
   box-sizing: border-box;
@@ -244,4 +232,19 @@ body {
   border: 1px solid black;
   padding: 0.25rem 1rem;
   background-color: #fff;
+}
+
+.reservations {
+  background-color: #fff;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.reservations_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }/*# sourceMappingURL=globals.css.map */

@@ -3,58 +3,101 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model login {
-  username String @db.VarChar(100)
-  password String @db.VarChar(100)
-
-  @@id([username, password])
+model MenuItem {
+  id        Int      @id @default(autoincrement())
+  name      String
+  price     Int
 }
 
-model menu {
-  id     String   @id @db.VarChar(255)
-  name   String?  @db.VarChar(100)
-  price  Int?
+model OrderItem {
+  id        Int      @id @default(autoincrement())
+  name      String
+  price     Int
+  quantity  Int
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   Int
 }
 
-model items {
-  id     String   @id @db.VarChar(255)
-  name   String   @db.VarChar(100)
-  price  Int
-  quantity Int
-  orders ItemsOnOrders[]
+model Order {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  cardCVV   Int
+  cardExp   String
+  cardNum   String
+  total     Int
+  items     OrderItem[]
 }
 
-model orders {
-  id          String    @id @db.VarChar(255)
-  card_number String?   @db.VarChar(255)
-  created_at  DateTime? @db.Timestamp(0)
-  name        String?   @db.VarChar(100)
-  card_cvv    Int
-  card_exp    String    @db.VarChar(100)
-  total       Int
-  items       ItemsOnOrders[]
+model Reservation {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String
+  numberOfGuests Int
+  date      DateTime
 }
 
-model ItemsOnOrders {
-  item       items     @relation(fields: [itemId], references: [id])
-  itemId     String // relation scalar field (used in the `@relation` attribute above)
-  order      orders     @relation(fields: [orderId], references: [id])
-  orderId     String // relation scalar field (used in the `@relation` attribute above)
-  assignedAt DateTime @default(now())
-  assignedBy String
+// model menu {
+//   id    String  @id @db.VarChar(255)
+//   name  String? @db.VarChar(100)
+//   price Int?
+// }
 
-  @@id([itemId, orderId])
-}
+// model items {
+//   id       String          @id @db.VarChar(255)
+//   name     String          @db.VarChar(100)
+//   price    Int
+//   quantity Int
+//   orders   ItemsOnOrders[]
+// }
 
-model reservations {
-  resdate  DateTime @db.Date
-  nopeople String   @db.VarChar(5)
-  restime  DateTime @db.Time(0)
-  name     String?  @db.VarChar(255)
+// model orders {
+//   id          String          @id @db.VarChar(255)
+//   card_number String?         @db.VarChar(255)
+//   created_at  DateTime?       @db.Timestamp(0)
+//   name        String?         @db.VarChar(100)
+//   card_cvv    Int
+//   card_exp    String          @db.VarChar(100)
+//   total       Int
+//   items       ItemsOnOrders[]
+// }
 
-  @@id([resdate, restime, nopeople])
-}
+// model reservations {
+//   id          String          @id @db.VarChar(255)
+//   name             String?  @db.VarChar(255)
+//   number_of_guests Int
+//   date             DateTime 
+// }
+
+
+// model Client {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   firstName String
+//   lastName  String
+//   email     String?
+//   notes     String?
+//   age       Int?
+//   stripeCustomerId String?
+//   addresses ClientAddress[]
+//   phoneNumbers ClientPhoneNumber[]
+// }
+
+// model ClientAddress {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   address   String?
+//   city      String?
+//   state     String?
+//   zip       String?
+//   country   String?
+//   client    Client   @relation(fields: [clientId], references: [id])
+//   clientId  Int
+// }

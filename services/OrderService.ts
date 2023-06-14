@@ -13,15 +13,7 @@ export interface OrderProps {
 }
 
 interface OrderItems {
-  assignedAt: Date;
-  assignedBy: string;
-  itemId: string;
-  orderId: string;
-  item: Item;
-}
-
-interface Item {
-  id?: string;
+  id?: Number;
   name?: string;
   quantity?: number;
   price?: number;
